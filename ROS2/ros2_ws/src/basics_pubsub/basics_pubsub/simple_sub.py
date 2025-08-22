@@ -13,9 +13,17 @@ class SimpleSub(Node):
 def main():
     rclpy.init()
     node = SimpleSub()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        node.get_logger().info("Shutting down")
+    finally:
+        node.destroy_node()
+        # Only call shutdown if the context is still active
+        if rclpy.ok():
+            rclpy.shutdown()
+
+
 
 if __name__ == '__main__':
     main()
