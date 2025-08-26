@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>sim_gazebo</name>
+  <version>0.0.1</version>
+  <description>Gazebo sim demo: launch + spawn a model</description>
+  <maintainer email="andrew@example.com">Andrew Lockwood</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <depend>gazebo_ros</depend>
+  <depend>rclpy</depend>
+  <depend>ament_index_python</depend>
+</package>
